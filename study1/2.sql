@@ -3,7 +3,7 @@ create table Shohin (
 	shohin_id CHAR(4) NOT NULL,
 	shohin_mei VARCHAR(100) NOT NULL,
 	shohin_bunrui VARCHAR(32) NOT NULL,
-	hanbai_tabka INTEGER,
+	hanbai_tanka INTEGER,
 	shiire_tanka INTEGER,
 	torokubi DATE,
 	PRIMARY KEY (shohin_id)
@@ -89,6 +89,25 @@ values
 --table名の変更
 -- alter table Sohin rename to Shohin; --postgres
 rename table Sohin to Shohin;
+
+--列の型変更
+alter table
+	classics
+modify
+	year smallint;
+
+--列の追加
+alter table
+	classics
+add
+	pages smallint unsigned;
+
+--列名の変更
+alter table
+	classics change type category VARCHAR(16);
+
+alter table
+	Shohin change hanbai_tabka hanbai_tanka INTEGER;
 
 --table作成
 create table Jyushoroku(
