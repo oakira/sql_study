@@ -107,21 +107,6 @@ create table tablename (fieldname int(4) zerofill);
 
 create table disposble(trash int);
 
---テーブルの中身を確認する
-select
-	*
-from
-	classics;
-
---列の確認
-describe classics;
-
---ユーザーの確認
-select
-	user,
-	host
-from
-	mysql.user;
 
 --既存のテーブルへのIDの追加
 alter table
@@ -169,21 +154,6 @@ from
 alter table
 	classics rename pre1900;
 
---列の型変更
-alter table
-	classics
-modify
-	year smallint;
-
---列の追加
-alter table
-	classics
-add
-	pages smallint unsigned;
-
---列名の変更
-alter table
-	classics change type category VARCHAR(16);
 
 --高速検索用のindexを追加する
 alter table
